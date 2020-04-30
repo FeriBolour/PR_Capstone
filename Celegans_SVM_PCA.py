@@ -72,8 +72,8 @@ np.random.shuffle(y)
 
 x_train = x[:, 0]
 y_train = x[:, 1:2]
-x_test = x[:, 0]
-y_test = x[:, 1:2]
+x_test = y[:, 0]
+y_test = y[:, 1:2]
 
 train_size = y_train.shape[0]
 test_size = y_test.shape[0]
