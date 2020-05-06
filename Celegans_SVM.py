@@ -109,13 +109,17 @@ y_train = np.array(y_train,dtype= 'f')
 y_test = np.array(y_test,dtype= 'f')
 
 clf = svm.SVC(C = 1.0,kernel = 'rbf')
-clf.fit(x_train,y_train)
 
+start_time = time.time()
+clf.fit(x_train,y_train)
+print("--- %s seconds for training---" % (time.time() - start_time))
+
+start_time = time.time()
 y_pred = clf.predict(x_test)
+print("--- %s seconds for testing---" % (time.time() - start_time))
     
 print(confusion_matrix(y_test,y_pred))
 print(classification_report(y_test,y_pred))
 
-print("--- %s seconds ---" % (time.time() - start_time))
-print("--- %s seconds ---" % (time.time() - start_time))
+
         
